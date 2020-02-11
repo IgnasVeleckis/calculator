@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator-app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>
+            Simple calculator
+        </h1>
+    </div>
+    <div class="calc">
+        <input type="textview" name="textview" id="main" readonly>
+        <div class="eq">
+            <input type="textview" name="textview" id="subMain" readonly>
+        </div>
+        <div class="btns">
+            <div class="row">
+                <input type="button" class="btn btn-c" value="C" onclick="clearInput()">
+            </div>
+            <div class="row">
+                <input type="button" class="btn btn-7" value="7" onclick="newVal(7)">
+                <input type="button" class="btn btn-8" value="8" onclick="newVal(8)">
+                <input type="button" class="btn btn-9" value="9" onclick="newVal(9)">
+                <input type="button" class="btn btn-division" value="/" onclick="newVal('/')">
+            </div>
+            <div class="row">
+                <input type="button" class="btn btn-4" value="4" onclick="newVal(4)">
+                <input type="button" class="btn btn-5" value="5" onclick="newVal(5)">
+                <input type="button" class="btn btn-6" value="6" onclick="newVal(6)">
+                <input type="button" class="btn btn-x" value="x" onclick="newVal('*')">
+
+            </div>
+            <div class="row">
+                <input type="button" class="btn btn-1" value="1" onclick="newVal(1)">
+                <input type="button" class="btn btn-2" value="2" onclick="newVal(2)">
+                <input type="button" class="btn btn-3" value="3" onclick="newVal(3)">
+                <input type="button" class="btn btn-minus" value="-" onclick="newVal('-')">
+            </div>
+            <div class="row">
+                <input type="button" class="btn btn-0" value="0" onclick="newVal(0)">
+                <input type="button" class="btn btn-dot" value="." onclick="newVal('.')">
+                <input type="button" class="btn btn-eq" value="=" onclick="eq()">
+                <input type="button" class="btn btn-plus" value="+" onclick="newVal('+')">
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+
+
+
+</html>
