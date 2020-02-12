@@ -15,7 +15,7 @@ input#main:hover {
 
 div.calc {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .row {
@@ -67,4 +67,14 @@ div.eq>input {
 div.eq>input:hover {
     background-color: white;
     cursor: default;
+}
+
+div.radio>form.inputs {
+    display: flex;
+    justify-content: center;
+}
+
+div.radio>span {
+    display: flex;
+    justify-content: center;
 }

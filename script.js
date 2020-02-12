@@ -43,11 +43,42 @@ function subEq() {
         if (eval(a) == undefined) {
             console.log('nothing to calculate')
         } else {
-            document.querySelector('#subMain').value = eval(a)
-
+            /* document.querySelector('#subMain').value = eval(a)
+            console.log(eval(a)) */
+            return eval(a)
         }
     }
 }
+
+
+
+function radioCheck(valueChecked) {
+    let radioButton = document.getElementById(`${valueChecked.id}`)
+    radioButton.checked = true;
+
+    let afterDot = document.getElementById(`${valueChecked.id}`).value.split('').length - 2;
+    console.log(radioButton)
+    console.log(afterDot)
+    return afterDot;
+
+}
+
+function correctSubEq() {
+    let a = radioCheck(tenth);
+    let b = subEq()
+    console.log(a)
+    console.log(b)
+
+    b = b.toFixed(a)
+    console.log(b)
+    document.querySelector('#subMain').value = b
+
+}
+
+
+
+
+
 
 function clearInput() {
     document.querySelector('#main').value = null
