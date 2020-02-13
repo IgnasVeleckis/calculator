@@ -14,14 +14,25 @@
             Simple calculator
         </h1>
     </div>
-    <div class="radio">
+    <!--     <div class="radio">
         <span>Round to:</span>
         <form class="inputs">
-            <input type="radio" class="btn-radio" name="round" id="tenth" onclick="correctSubEq(tenth)" value="0.1" />.1
-            <input type="radio" class="btn-radio" name="round" id="hundredths" onclick="correctSubEq(hundredths)" value="0.01" />.01
-            <input type="radio" class="btn-radio" name="round" id="thousandths" onclick="correctSubEq(thousandths)" value="0.001" />.001
-            <input type="radio" class="btn-radio" name="round" id="tenThousandths" onclick="correctSubEq(tenThousandths)" value="0.0001" />.0001
+            <input type="radio" class="btn-radio" name="round" id="1" onclick="correctSubEq(1)" value="1" />.1
+            <input type="radio" class="btn-radio" name="round" id="2" onclick="correctSubEq(2)" value="2" />.01
+            <input type="radio" class="btn-radio" name="round" id="3" onclick="correctSubEq(3)" value="3" />.001
+            <input type="radio" class="btn-radio" name="round" id="4" onclick="correctSubEq(4)" value="4" />.0001
         </form>
+    </div> -->
+    <div class="rounding">
+        <span>Round to: </span>
+        <select id="round" name="roundValue" onclick="rounding()">
+            <option value="1">.1</option>
+            <option value="2">.01</option>
+            <option value="3">.001</option>
+            <option value="4">.0001</option>
+            <option value="5">.00001</option>
+            <option value="6">.000001</option>
+        </select>
     </div>
     <div class="calc">
         <input type="textview" name="textview" id="main" readonly />
@@ -59,7 +70,7 @@
         </div>
     </div>
 
-    <button onclick="correctSubEq()">Clck</button>
+
     <script src="script.js"></script>
 </body>
 

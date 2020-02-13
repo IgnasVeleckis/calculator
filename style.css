@@ -69,12 +69,11 @@ div.eq>input:hover {
     cursor: default;
 }
 
-div.radio>form.inputs {
+div.rounding {
     display: flex;
     justify-content: center;
 }
 
-div.radio>span {
-    display: flex;
-    justify-content: center;
+div.rounding>select {
+    margin-left: 1rem;
 }
