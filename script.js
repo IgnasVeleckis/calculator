@@ -6,7 +6,7 @@ function newVal(btnVal) {
     if (typeof(btnVal) == 'number') {
         document.querySelector('#main').value = document.querySelector('#main').value + btnVal
         arr.push(typeof(btnVal))
-        subEq();
+        correctSubEq();
     }
     if (typeof(btnVal) == 'string' && arr[length - 1] != 'string' && length != 0) {
         document.querySelector('#main').value = document.querySelector('#main').value + btnVal
@@ -55,29 +55,39 @@ function subEq() {
 function radioCheck(valueChecked) {
     let radioButton = document.getElementById(`${valueChecked.id}`)
     radioButton.checked = true;
-
     let afterDot = document.getElementById(`${valueChecked.id}`).value.split('').length - 2;
-    console.log(radioButton)
-    console.log(afterDot)
     return afterDot;
 
 }
 
-function correctSubEq() {
-    let a = radioCheck(tenth);
-    let b = subEq()
-    console.log(a)
-    console.log(b)
 
-    b = b.toFixed(a)
-    console.log(b)
-    document.querySelector('#subMain').value = b
+function correctSubEq(mantissa) {
+    let a = radioCheck(mantissa); // returns how many numbers after dot
+    let b = subEq() // returns not rounded eq
+    let array;
+
+    if (b != undefined) {
+        b = b.toFixed(a)
+        array = b.split('');
+    }
+
+
+
+    if (array != null && array[array.length - 1] == 0 && array[array.length - 2] == 0) {
+        for (let i = 0; i < a + 1; i++) {
+            array.pop()
+        }
+        b = array.join('');
+        document.querySelector('#subMain').value = b
+    } else if (array != null && array[array.length - 1] == 0) {
+        array.pop()
+        b = array.join('');
+        document.querySelector('#subMain').value = b
+    }
+
+
 
 }
-
-
-
-
 
 
 function clearInput() {
