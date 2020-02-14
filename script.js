@@ -15,7 +15,7 @@ function newVal(btnVal) {
     }
 }
 
-function subEq(xxx) {
+function subEq(eqCheck) {
     let a = document.querySelector("#main").value;
     let arr = a.split("");
     let length = arr.length;
@@ -33,12 +33,12 @@ function subEq(xxx) {
                 zeroArr.push(zero);
             }
             let zeroToString = zeroArr.join("");
-            let ccc =
-                Math.round((eval(a) + Number.EPSILON) * zeroToString) / zeroToString; //
-            if (xxx == 9) {
-                document.querySelector("#main").value = ccc;
+            let roundedByChoosen =
+                Math.round((eval(a) + Number.EPSILON) * zeroToString) / zeroToString;
+            if (eqCheck == 9) {
+                document.querySelector("#main").value = roundedByChoosen;
             }
-            document.querySelector("#subMain").value = ccc;
+            document.querySelector("#subMain").value = roundedByChoosen;
         }
     }
 }
