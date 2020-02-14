@@ -8,9 +8,17 @@ input:hover {
     cursor: pointer;
 }
 
+input:focus {
+    outline: none;
+}
+
 input#main:hover {
     background-color: white;
     cursor: default;
+}
+
+input#main {
+    background-color: white;
 }
 
 div.calc {

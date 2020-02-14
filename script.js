@@ -7,6 +7,7 @@ function newVal(btnVal) {
             document.querySelector("#main").value + btnVal;
         arr.push(typeof btnVal);
         subEq();
+        console.log(arr);
     }
     if (typeof btnVal == "string" && arr[length - 1] != "string" && length != 0) {
         document.querySelector("#main").value =
@@ -43,9 +44,15 @@ function subEq() {
         if (eval(a) == undefined) {
             console.log("nothing to calculate");
         } else {
-            let round = rounding(); // return value from select. this value = how much numbers after .
-
-            let ccc = Math.round((eval(a) + Number.EPSILON) * 1000) / 1000; // zenklai po kabl
+            let round = rounding();
+            let zero = 0;
+            let zeroArr = [1];
+            for (let i = 0; i < round; i++) {
+                zeroArr.push(zero);
+            }
+            let zeroToString = zeroArr.join("");
+            let ccc =
+                Math.round((eval(a) + Number.EPSILON) * zeroToString) / zeroToString; //
             document.querySelector("#subMain").value = ccc;
         }
     }
@@ -58,6 +65,5 @@ function clearInput() {
 
 function rounding() {
     let wantedRound = document.querySelector("#round").value;
-    console.log(wantedRound);
     return wantedRound;
 }
