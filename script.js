@@ -16,25 +16,26 @@ function newVal(btnVal) {
 }
 
 function subEq(eqCheck) {
-    let a = document.querySelector("#main").value;
-    let arr = a.split("");
-    let length = arr.length;
+    let taskString = document.querySelector("#main").value;
+    let taskStringToArray = taskString.split("");
+    let length = taskStringToArray.length;
     let badArr = ["/", "*", "-", "+", "."];
-    if (badArr.includes(arr[length - 1])) {
-        console.log("bad-format");
+    if (badArr.includes(taskStringToArray[length - 1])) {
+        document.querySelector("#main").classList.add("warn");
+        removeWarnStyle();
     } else {
-        if (eval(a) == undefined) {
+        if (eval(taskString) == undefined) {
             console.log("nothing to calculate");
         } else {
             let round = rounding();
-            let zero = 0;
             let zeroArr = [1];
             for (let i = 0; i < round; i++) {
-                zeroArr.push(zero);
+                zeroArr.push(0);
             }
             let zeroToString = zeroArr.join("");
             let roundedByChoosen =
-                Math.round((eval(a) + Number.EPSILON) * zeroToString) / zeroToString;
+                Math.round((eval(taskString) + Number.EPSILON) * zeroToString) /
+                zeroToString;
             if (eqCheck == 9) {
                 document.querySelector("#main").value = roundedByChoosen;
             }
@@ -51,4 +52,11 @@ function clearInput() {
 function rounding() {
     let wantedRound = document.querySelector("#round").value;
     return wantedRound;
+}
+
+function removeWarnStyle() {
+    setTimeout(function() {
+        let span = document.querySelector("#main");
+        span.classList.remove("warn");
+    }, 2000);
 }
