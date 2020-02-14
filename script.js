@@ -7,7 +7,6 @@ function newVal(btnVal) {
             document.querySelector("#main").value + btnVal;
         arr.push(typeof btnVal);
         subEq();
-        console.log(arr);
     }
     if (typeof btnVal == "string" && arr[length - 1] != "string" && length != 0) {
         document.querySelector("#main").value =
@@ -16,24 +15,7 @@ function newVal(btnVal) {
     }
 }
 
-function eq() {
-    let a = document.querySelector("#main").value;
-    let arr = a.split("");
-    let length = arr.length;
-    let badArr = ["/", "*", "-", "+", "."];
-    if (badArr.includes(arr[length - 1])) {
-        console.log("bad-format");
-    } else {
-        if (eval(a) == undefined) {
-            console.log("nothing to calculate");
-        } else {
-            document.querySelector("#main").value =
-                Math.round((eval(a) + Number.EPSILON) * 1000) / 1000;
-        }
-    }
-}
-
-function subEq() {
+function subEq(xxx) {
     let a = document.querySelector("#main").value;
     let arr = a.split("");
     let length = arr.length;
@@ -53,6 +35,9 @@ function subEq() {
             let zeroToString = zeroArr.join("");
             let ccc =
                 Math.round((eval(a) + Number.EPSILON) * zeroToString) / zeroToString; //
+            if (xxx == 9) {
+                document.querySelector("#main").value = ccc;
+            }
             document.querySelector("#subMain").value = ccc;
         }
     }
